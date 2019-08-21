@@ -1,4 +1,4 @@
-dist/*.js
+dist/*
 config/*.js
 node_modules/*
 *.config.js
