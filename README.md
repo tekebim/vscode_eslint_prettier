@@ -74,8 +74,10 @@ Configuration basics with airbnb-config
   },
   "settings": {}
 }
+```
 
 Configuration with babel + plugin html + config airbnb
+
 ```
 
 {
@@ -99,38 +101,44 @@ Configuration with babel + plugin html + config airbnb
 "settings": {}
 }
 
+```
+
 Configuration with babel + plugin html + config standard
 
 ```
+
 {
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
-  },
-  "extends": ["standard", "plugin:prettier/recommended"],
-  "plugins": ["html"],
-  "rules": {
-    "no-unused-vars": 1,
-    "no-multiple-empty-lines": 2,
-    "no-console": ["error", { "allow": ["warn", "log"] }]
-  },
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
-  },
-  "settings": {}
+"parser": "babel-eslint",
+"parserOptions": {
+"ecmaVersion": 6,
+"sourceType": "module"
+},
+"extends": ["standard", "plugin:prettier/recommended"],
+"plugins": ["html"],
+"rules": {
+"no-unused-vars": 1,
+"no-multiple-empty-lines": 2,
+"no-console": ["error", { "allow": ["warn", "log"] }]
+},
+"env": {
+"browser": true,
+"es6": true,
+"node": true
+},
+"settings": {}
 }
+
 ```
 
 ## Create .prettierc config file
 
 ```
+
 {
-  "singleQuote": true,
-  "trailingComma": "all"
+"singleQuote": true,
+"trailingComma": "all"
 }
+
 ```
 
 ## User Settings VSCode
@@ -139,16 +147,18 @@ Modify settings
 Code > Preferences > Settings
 
 ```
+
 "editor.formatOnSave": true,
 "[javascript]": {
-  "editor.formatOnSave": false
+"editor.formatOnSave": false
 },
 "eslint.autoFixOnSave": true,
 "eslint.alwaysShowStatus": true,
 "prettier.disableLanguages": [
-  "js"
+"js"
 ],
 "prettier.eslintIntegration": true
+
 ```
 
 ## Lint Script
@@ -156,7 +166,9 @@ Code > Preferences > Settings
 Include new script in package.json to run ESLint
 
 ```
+
 "lint": "eslint src -c .eslintrc --ext js,jsx",
+
 ```
 
 ## Ignoring files
@@ -164,8 +176,14 @@ Include new script in package.json to run ESLint
 Create a .eslintignore file
 
 ```
-node_modules/*
-public/*
-dist/*
-config/*
+
+node_modules/_
+public/_
+dist/_
+config/_
+
+```
+
+```
+
 ```
