@@ -55,8 +55,82 @@ npm install --save-dev babel-eslint eslint eslint-plugin-prettier eslint-config-
 
 ## Create .eslintrc file
 
+Configuration basics with airbnb-config
+
+```
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "rules": {
+    "no-unused-vars": 1,
+    "no-multiple-empty-lines": 2,
+    "no-console": ["error", { "allow": ["warn", "log"] }]
+  },
+  "env": {
+    "browser": true
+  },
+  "settings": {}
+}
+
+Configuration with babel + plugin html + config airbnb
 ```
 
+{
+"parser": "babel-eslint",
+"parserOptions": {
+"ecmaVersion": 6,
+"sourceType": "module"
+},
+"extends": ["airbnb-base", "plugin:prettier/recommended"],
+"plugins": ["html"],
+"rules": {
+"no-unused-vars": 1,
+"no-multiple-empty-lines": 2,
+"no-console": ["error", { "allow": ["warn", "log"] }]
+},
+"env": {
+"browser": true,
+"es6": true,
+"node": true
+},
+"settings": {}
+}
+
+Configuration with babel + plugin html + config standard
+
+```
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "extends": ["standard", "plugin:prettier/recommended"],
+  "plugins": ["html"],
+  "rules": {
+    "no-unused-vars": 1,
+    "no-multiple-empty-lines": 2,
+    "no-console": ["error", { "allow": ["warn", "log"] }]
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "settings": {}
+}
+```
+
+## Create .prettierc config file
+
+```
+{
+  "singleQuote": true,
+  "trailingComma": "all"
+}
 ```
 
 ## User Settings VSCode
@@ -77,14 +151,10 @@ Code > Preferences > Settings
 "prettier.eslintIntegration": true
 ```
 
-```css
-.p { color:#ffff08;}
-```
-
-
 ## Lint Script
 
 Include new script in package.json to run ESLint
+
 ```
 "lint": "eslint src -c .eslintrc --ext js,jsx",
 ```
